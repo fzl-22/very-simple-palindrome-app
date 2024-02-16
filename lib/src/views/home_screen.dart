@@ -89,9 +89,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: state is! PalindromeLoading
                         ? () => _onSubmit(context)
                         : null,
-                    child: state is PalindromeLoading
-                        ? const LoadingIndicator()
-                        : const Text('CHECK'),
+                    child: state is! PalindromeLoading
+                        ? const Text('CHECK')
+                        : const LoadingIndicator(),
                   );
                 },
               ),
